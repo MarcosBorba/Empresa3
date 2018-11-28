@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="465.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.TelaCadastroClienteController">
+    <children>
+        <Button layoutX="16.0" layoutY="426.0" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+        <Label layoutX="14.0" layoutY="14.0" text="Cadastro de Clientes">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TabPane layoutX="178.0" layoutY="45.0" onMouseClicked="#protegeSelection" prefHeight="405.0" prefWidth="570.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="tabGeral" text="Geral">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="71.0" prefWidth="574.0">
+                            <children>
+                                <Label layoutX="14.0" layoutY="20.0" text="Nome:" />
+                                <Label layoutX="29.0" layoutY="50.0" text="Cpf:" />
+                                <TextField fx:id="idNome" layoutX="53.0" layoutY="16.0" prefHeight="25.0" prefWidth="196.0" promptText="Digite seu nome" />
+                                <TextField fx:id="idCpf" layoutX="53.0" layoutY="46.0" prefHeight="25.0" prefWidth="196.0" promptText="000.000.000-00" />
+                        <Label fx:id="idError" layoutX="32.0" layoutY="88.0" prefHeight="27.0" prefWidth="521.0" textFill="#f50202" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="tabEndereco" text="Endereco">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <ComboBox fx:id="idPais" layoutX="10.0" layoutY="86.0" onAction="#ActionEstado" prefHeight="25.0" prefWidth="145.0" promptText="Pais" />
+                                <TextField fx:id="idLogradouro" layoutX="10.0" layoutY="14.0" prefHeight="25.0" prefWidth="554.0" promptText="Logradouro" />
+                                <TextField fx:id="idBairro" layoutX="9.0" layoutY="44.0" prefHeight="25.0" prefWidth="346.0" promptText="Bairro" />
+                                <ComboBox fx:id="idEstado" layoutX="160.0" layoutY="86.0" onAction="#ActionCidade" prefHeight="25.0" prefWidth="145.0" promptText="Estado" />
+                                <ComboBox fx:id="idCidade" layoutX="310.0" layoutY="86.0" prefHeight="25.0" prefWidth="145.0" promptText="Cidade" />
+                                <TextField fx:id="idCep" layoutX="365.0" layoutY="44.0" prefWidth="199.0" promptText="CEP" />
+                                <TableView fx:id="tvClienteEndereco" layoutX="7.0" layoutY="121.0" onMouseClicked="#alterarEndereco" prefHeight="249.0" prefWidth="558.0" />
+                                <Button layoutX="516.0" layoutY="86.0" mnemonicParsing="false" onAction="#salvarEndereco" text="Salvar" />
+                                <Button layoutX="461.0" layoutY="86.0" mnemonicParsing="false" onAction="#excluirEndereco" text="Excluir" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <ListView fx:id="listvCliente" layoutX="9.0" layoutY="94.0" onMouseClicked="#exibirCliente" prefHeight="328.0" prefWidth="164.0" />
+        <Label layoutX="9.0" layoutY="70.0" text="Clientes:" AnchorPane.bottomAnchor="370.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="71.0" layoutY="46.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir" />
+        <Button layoutX="23.0" layoutY="46.0" mnemonicParsing="false" onAction="#novo" text="Novo" />
+              <Button layoutX="694.0" layoutY="11.0" mnemonicParsing="false" onAction="#salvarAll" text="Salvar" />
+    </children>
+</AnchorPane>

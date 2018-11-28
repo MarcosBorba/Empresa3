@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="355.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.TelaPrincipal">
+   <children>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Configurações">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Fechar" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Consultas">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#TelaCadastroVenda" text="Consulta de Vendas" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Cadastros">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#TelaCadastroCliente" text="Cadastro de Clientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#TelaCadastroCargo" text="Cadastro de Cargos" />
+                  <MenuItem mnemonicParsing="false" onAction="#TelaCadastroCompra" text="Cadastro de Compras" />
+                  <MenuItem mnemonicParsing="false" onAction="#TelaCadastroFuncionario" text="Cadastro de Funcionarios" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" onAction="#TelaSobre" text="Ajuda">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#TelaSobre" text="Sobre" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
